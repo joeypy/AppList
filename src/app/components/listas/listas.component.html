@@ -1,0 +1,27 @@
+<ion-list>
+  <ion-list-header *ngIf="service.listas.length !== 0" class="animated fadeInDown">
+      <ion-label>Tareas</ion-label>
+  </ion-list-header>
+
+  <ion-item-sliding *ngFor="let lista of service.listas | filtroCompletado:terminada" class="animated fadeInDown">
+    
+    <ion-item-options side="start">
+        <ion-item-option (click)="actualizarNombreLista(lista)">
+            <ion-icon slot="icon-only" name="create"></ion-icon>
+        </ion-item-option>
+    </ion-item-options>
+
+    <ion-item-options side="end">
+      <ion-item-option color="danger" (click)="borrarLista(lista)">
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+
+    <ion-item ion-item  (click)="listaSeleccionada(lista)" detail="true">
+      <ion-label>{{ lista.titulo }}</ion-label>
+      <ion-note slot="end">{{ lista.items.length }} items</ion-note>
+    </ion-item> 
+
+  </ion-item-sliding>
+  
+</ion-list>

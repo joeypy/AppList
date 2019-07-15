@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center" color="favorite"> 
+    <ion-title class="font_color">
+      Lista de tareas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<img src="../../assets/completados.png">
+<ion-content>
+
+  <app-listas [terminada]="true"></app-listas>
+
+  <div class="ion-text-center" *ngIf="service.listas.length === 0" style="height: 100%">
+    <div style="margin-top: 50%">
+        <img src="../../assets/emptylist.png">
+        <br><br>
+        <ion-label style="color: grey">No tiene tareas completadas actualmente.</ion-label>
+    </div>
+  </div>
+  
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="favorite" (click)="agregarLista()">
+      <ion-icon name="add" style="color:white"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
