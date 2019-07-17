@@ -23,7 +23,7 @@ export class ListasComponent {
   }
   
   listaSeleccionada( lista: Lista ) {
-    this.navCtrl.navigateForward('add', {
+    this.navCtrl.navigateForward('agregar', {
       state: {
         lista
       }

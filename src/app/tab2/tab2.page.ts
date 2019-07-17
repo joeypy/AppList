@@ -24,7 +24,7 @@ export class Tab2Page {
   
   
   listaSeleccionada( lista: Lista ) {
-  this.navCtrl.navigateForward('add', {
+  this.navCtrl.navigateForward('agregar', {
     state: {
       lista
       }
@@ -53,7 +53,7 @@ export class Tab2Page {
         return;
       }
       this.navCtrl.navigateForward(
-        'add', {
+        'agregar', {
           state: {
             data
           }
